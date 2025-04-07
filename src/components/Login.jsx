@@ -6,9 +6,9 @@ import { addUser } from '../utils/userSlice';
 import { BASE_URL } from '../utils/constants';
 
 const Login = () => {
-
     const [emailId, setEmailId] = useState("gayatri@gmail.com");
-    const [password, setPassword] = useState("Gayatri@123");
+    const [password, setPassword] = useState("Gayatri@12");
+    const [error, setError] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const Login = () => {
             dispatch(addUser(res.data))
             navigate("/")
         } catch (err) {
-            console.log(err);
+            setError(err?.response?.data || "Something went wrong!!");
         }
     }
 
@@ -44,6 +44,8 @@ const Login = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)} />
                     </fieldset>
+
+                    <p className='text-red-500 font-medium mt-2'>{error}</p>
 
                     <div className="card-actions justify-center mt-4">
                         <button className="btn btn-primary" onClick={handleClick}>Sign In</button>
