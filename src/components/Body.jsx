@@ -22,7 +22,7 @@ const Body = () => {
         }
         catch(err) {
             if(err.status === 401) {
-                navigate("/login")
+                return navigate("/login")
             }
             
             console.log(err)
@@ -36,7 +36,7 @@ const Body = () => {
         <>
             <NavBar />
             <Outlet />
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }
