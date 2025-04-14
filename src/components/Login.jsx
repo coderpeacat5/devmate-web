@@ -86,13 +86,13 @@ const Login = () => {
 
                     <p onClick={() => setIsLoginForm((value) => !value)}>
                         {isLoginForm ? (
-                            <>
-                                New to DevMate? <button>Sign Up now</button>
-                            </>
+                            <div className='mt-2'>
+                                New to DevMate? <button className='font-bold'>Sign Up now</button>
+                            </div>
                         ) : (
-                            <>
-                                Already have an account? <button>Sign In</button>
-                            </>
+                            <div className='mt-2'>
+                                Already have an account? <button className='font-bold'>Sign In</button>
+                            </div>
                         )}
                     </p>
 
