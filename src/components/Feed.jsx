@@ -11,6 +11,9 @@ const Feed = () => {
 
   const getFeed = async () => {
     try {
+      if (!localStorage.getItem("token")) {
+        return navigate("/login");
+      }
       if (feed) return;
       const res = await axios.get(BASE_URL + "/user/feed",  { withCredentials: true })
       console.log(res.data)
@@ -25,7 +28,7 @@ const Feed = () => {
     getFeed()
   }, [])
 
-  if(!feed) return;
+  if(!feed) return <h1>Loading...</h1>;
 
   if(feed.length === 0) return <h1 className='flex justify-center font-bold mt-32 text-xl'>No new users found!!</h1>
 
