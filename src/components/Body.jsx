@@ -24,18 +24,12 @@ const Body = () => {
         navigate("/login");
       }
       console.error(err);
-    } finally {
-      setIsAuthChecked(true);
     }
   };
 
   useEffect(() => {
     fetchUser();
   }, []);
-
-  if (!isAuthChecked) {
-    return <div>Loading...</div>; 
-  }
 
   return (
     <div>
