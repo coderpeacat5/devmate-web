@@ -21,9 +21,9 @@ const NavBar = () => {
         }
     }
     return (
-        <div className="navbar bg-base-100 shadow-sm">
-            <div className="flex-1">
-                <a className="btn btn-ghost text-xl">DevMate</a>
+        <div className="fixed top-0 w-full bg-gradient-to-b from-black flex  justify-between z-40 h-79">
+            <div className="p-3">
+                <a className="text-lg font-semibold">DevMate</a>
             </div>
             {user && (
                 <div className="flex items-center gap-2">

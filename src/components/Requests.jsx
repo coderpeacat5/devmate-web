@@ -13,8 +13,8 @@ const Requests = () => {
         try {
             const res = await axios.post(
                 BASE_URL + "/request/review/" + status + "/" + _id,
-                 {} , 
-                 { withCredentials: true}
+                {},
+                { withCredentials: true }
             )
             dispatch(removeRequest(_id))
 
@@ -44,10 +44,10 @@ const Requests = () => {
 
     if (!requests) return;
 
-    if (requests.length === 0) return <h1 className='flex justify-center my-10'>No requests found!!</h1>
+    if (requests.length === 0) return <h1 className='flex justify-center mt-72'>No requests found!!</h1>
 
     return (
-        <div className='flex flex-col justify-center items-center my-5'>
+        <div className='pt-8 flex flex-col justify-center items-center my-5'>
             <h1 className='font-bold text-2xl mb-8'>Requests</h1>
             {showToast && (
                 <div className="toast toast-top toast-center">
@@ -61,11 +61,11 @@ const Requests = () => {
                 const { _id, firstName, lastName, photoUrl, age, gender, about } = request.fromUserId;
 
                 return (
-                    <div key={_id} className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300  mx-auto">
+                    <div key={_id} className="w-1/2 flex justify-between items-center m-4 p-4 rounded-lg bg-base-300  mx-auto">
                         <div>
                             <img
                                 alt="photo"
-                                className="w-20 h-20 rounded-full"
+                                className="w-20 h-20 rounded-lg"
                                 src={photoUrl}
                             />
                         </div>
