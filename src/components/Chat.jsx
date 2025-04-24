@@ -7,7 +7,7 @@ import { BASE_URL } from '../utils/constants';
 
 const Chat = () => {
   const { targetUserId } = useParams();
-  console.log(targetUserId)
+  // console.log(targetUserId)
 
   const[messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -19,7 +19,7 @@ const Chat = () => {
       withCredentials: true,
     });
 
-    console.log(chat.data.messages);
+    // console.log(chat.data.messages);
 
     const chatMessages = chat?.data?.messages.map((msg) => {
       const { senderId, text } = msg;
@@ -41,7 +41,7 @@ const Chat = () => {
     socket.emit("joinChat", {firstName : user.firstName, userId, targetUserId})
 
     socket.on("messageReceived", ({firstName, lastName, text}) => {
-      console.log(firstName + " "+ text);
+      // console.log(firstName + " "+ text);
       setMessages((messages) => [...messages, {firstName, lastName, text}])
     })
 
